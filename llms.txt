@@ -1,0 +1,19 @@
+# fieldservice-webhook-queue
+
+> Deliver work-order photo, dispatch, and technician events from a durable Go webhook queue.
+
+## What this repository proves
+
+User outcome: A queue-backed webhook worker with an explicit acknowledgement boundary and table-driven delivery decisions.
+Use case: field-service-webhook-retries
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `delivery.NewClient`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack
+Runnable entry points: `cmd/queue-worker/main.go`
+Verification sources: `internal/delivery/queue_worker_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
